@@ -27,7 +27,6 @@ public class Student {
 		this.setStudentName(studentName);
 		this.setStudentSex(studentSex);
 		this.setStudentAge(studentAge);
-		this.setStudentSubject(studentSubject);
 	}
 
 	public String getStudentNo() {

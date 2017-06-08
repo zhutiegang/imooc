@@ -10,7 +10,7 @@ public class SchoolTest {
 		Subject sub2=new Subject("软件工程","J0002",5);
 		System.out.println(sub1.info());
 		System.out.println("============================");
-		Student student1=new Student("s01","张三","男",17,sub1);
+		Student student1=new Student("s01","张三","男",17);
 		System.out.println(student1.introduction());
 		System.out.println("============================");
 		Student student2=new Student("s02","李四","男",19);

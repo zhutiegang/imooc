@@ -1,0 +1,89 @@
+package com.imooc.model;
+
+public class Student {
+	// 成员属性：学号、姓名、性别、年龄
+	private String studentNo;
+	private String studentName;
+	private String studentSex;
+	private int studentAge;
+
+	// 无参构造方法
+	public Student() {
+
+	}
+
+	// 多参构造方法，实现对全部属性的赋值
+	public Student(String studentNo, String studentName, String studentSex, int studentAge) {
+		this.setStudentNo(studentNo);
+		this.setStudentName(studentName);
+		this.setStudentSex(studentSex);
+		this.setStudentAge(studentAge);
+	}
+
+	public String getStudentNo() {
+		return studentNo;
+	}
+
+	public void setStudentNo(String studentNo) {
+		this.studentNo = studentNo;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
+	public String getStudentSex() {
+		return studentSex;
+	}
+
+	public void setStudentSex(String studentSex) {
+		//限制年龄只能是"男"或女，反之赋值为"男"
+		if(!(studentSex.equals("男")||studentSex.equals("女"))){
+			studentSex="男";
+		}
+		this.studentSex = studentSex;
+	}
+
+	public int getStudentAge() {
+		return studentAge;
+	}
+	/**
+	 * 给年龄赋值，限定年龄必须在10-100岁之间，反之赋值为18岁
+	 * @param studentAge 传入的年龄
+	 */
+	public void setStudentAge(int studentAge) {
+		if(studentAge>100||studentAge<10){
+			studentAge=18;
+		}
+		this.studentAge = studentAge;
+	}
+	/**
+	 * 学生自我介绍的方法
+	 * @return 自我介绍的信息，包括姓名、学号、性别、年龄
+	 */
+	public String introduction() {
+		String str = "学生信息如下：\n姓名：" + this.getStudentName() + "\n学号：" + this.getStudentNo() + "\n性别："
+				+ this.getStudentSex() + "\n年龄：" + this.getStudentAge();
+		return str;
+	}
+	/**
+	 * 学生自我介绍的方法
+	 * @param subjectName 专业名称
+	 * @param subjectLife 学制年限
+	 * @return 自我介绍的信息，包括姓名、学号、性别、年龄、所学专业名称、学制年限
+	 */
+	public String introduction(String subjectName,int subjectLife) {
+		String str = "学生信息如下：\n姓名：" + this.getStudentName() + "\n学号：" + this.getStudentNo() + "\n性别："
+				+ this.getStudentSex() + "\n年龄：" + this.getStudentAge()+"\n专业名称："+subjectName+"\n学制年限："+subjectLife;
+		return str;
+	}
+	public String introduction(Subject sub) {
+		String str = "学生信息如下：\n姓名：" + this.getStudentName() + "\n学号：" + this.getStudentNo() + "\n性别："
+				+ this.getStudentSex() + "\n年龄：" + this.getStudentAge()+"\n专业名称："+sub.subjectName+"\n学制年限："+sub.subjectLife;
+		return str;
+	}
+}
