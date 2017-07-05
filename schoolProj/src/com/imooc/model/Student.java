@@ -28,6 +28,7 @@ public class Student {
 		this.setStudentSex(studentSex);
 		this.setStudentAge(studentAge);
 		this.setStudentSubject(studentSubject);
+		studentSubject.addStudent(this);
 	}
 
 	public String getStudentNo() {
